@@ -3,7 +3,7 @@ name: Generate Doxygen Docs
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*'  # Rulează când faci push la tag-uri ca v1.0, v2.1 etc.
 
 jobs:
   docs:
@@ -19,7 +19,7 @@ jobs:
       - name: Generate Documentation
         run: doxygen Doxyfile
 
-      - name: Upload HTML Docs as Artifact
+      - name: Upload HTML Docs
         uses: actions/upload-artifact@v3
         with:
           name: documentation
